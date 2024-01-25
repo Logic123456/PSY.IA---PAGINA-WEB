@@ -1,0 +1,318 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: 'Poppins', sans-serif;
+}
+
+body {
+    background: #000;
+    background-image: url(../IMG/fondo.jpg);
+}
+
+/*CODIGO DE LA CABECERA*/
+
+header {
+    background: #222;
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    z-index: 1000;
+}
+
+nav {
+    width: 100%;
+    height: 50px;
+    border-radius: 8px;
+    display: flex;
+    justify-content: flex-end;
+    align-items: center;
+    padding-right: 20px;
+    position: relative;
+}
+
+nav a {
+    display: inline-block;
+    font-size: 1em;
+    font-weight: 500;
+    color: #fff;
+    text-decoration: none;
+    padding: 0 23px;
+    z-index: 1;
+    position: relative;
+}
+
+nav span {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 0;
+    height: 100%;
+    background: linear-gradient(45deg, #4f1919, #ff3333);
+    border-radius: 8px;
+    transition: .5s;
+}
+
+nav a:hover ~ span {
+    left: 0;
+    width: 100%;
+}
+
+nav a:nth-child(1):hover ~ span {
+    left: 0;
+    width: 64%;
+}
+
+nav a:nth-child(2):hover ~ span {
+    left: 0%;
+    width: 72%;
+}
+
+nav a:nth-child(3):hover ~ span {
+    left: 0%;
+    width: 80%;
+}
+
+nav a:nth-child(4):hover ~ span {
+    left: 0%;
+    width: 85%;
+}
+
+nav a:nth-child(5):hover ~ span {
+    left: 0%;
+    width: 92%;
+}
+
+nav a:nth-child(6):hover ~ span {
+    left: 0%;
+    width: 100%;
+}
+/*CODIGO DE LA CABECERA*/
+
+/*CODIGO DE SOPORTE*/
+.form-content
+{
+    background: linear-gradient(
+        50deg,
+        rgba(40,42,55,1) 50%,
+        rgba(40,42,55,0.7)
+        ),
+        url(../IMG/fondo.jpg);
+    background-position: center;
+    background-repeat: no-repeat;
+    background-size: cover;
+    padding: 10px 50px;
+    width: 1100px;
+    border-radius: 25px;
+}
+
+.form-content h2
+{
+    color: #f4f6f9;
+    font-size: 40px;
+    margin-bottom: 25px;
+}
+
+form
+{
+    display: flex;
+    flex-direction: column;
+    width: 50%;
+}
+
+label
+{
+    font-size: 17px;
+    color: #959AAB;
+    margin-bottom: 10px;
+}
+
+input, textarea
+{
+    padding: 17px 14px;
+    background-color: #333646;
+    border: 0;
+    font-size: 15px;
+    color: #f4f6f9;
+    margin-bottom: 20px;
+    border-radius: 10px;
+}
+
+:focus
+{
+    outline: 1px solid #1E92E9;
+}
+
+.btn
+{
+    background-color: #1E92E9;
+    width: 150px;
+    align-self: flex-end;
+    cursor: pointer;
+}
+
+.btn:hover
+{
+    background-color: #1E92E9;
+}
+
+@media(max-width:991px)
+{
+    body
+    {
+        padding: 30px;
+    }
+    .form-content
+    {
+        width: 100%;
+    }
+    form
+    {
+        width: 100%;
+    }
+}
+
+/*CODIGO DE SOPORTE*/
+
+/*CODIGO DEL PIE DE PAGINA*/
+
+@import url("https://fonts.googleapis.com/css2?family=Poppins&display=swap");
+
+.footer-container {
+    background: #222;
+    text-align: center;
+    padding: 20px;
+    position: fixed;
+    bottom: 0;
+    width: 100%;
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-around;
+    align-items: center;
+}
+
+.social-text, .contact-text{
+    flex: 1 1 100%;
+    margin-bottom: 45px;
+}
+
+.copyright-container {
+    flex: 1 1 100%;
+    background-color: #2c3e50;
+    padding: 15px 10px;
+    text-align: center;
+    color: #fff;
+    position: absolute;
+    bottom: 0;
+    width: 100%;
+}
+
+.wrapper {
+    list-style: none;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.wrapper .icon {
+    position: relative;
+    background: #fff;
+    border-radius: 50%;
+    padding: 15px;
+    margin: 10px;
+    width: 50px;
+    height: 50px;
+    font-size: 1.1rem;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+    box-shadow: 0 10px 10px rgba(0, 0, 0, 0.1);
+    cursor: pointer;
+    transition: all 0.2s cubic-bezier(0.68, -0.55, 0.265, 1.55);
+}
+
+.wrapper .tooltip {
+    position: absolute;
+    top: 0;
+    font-size: 0.8rem;
+    background: #fff;
+    color: #fff;
+    padding: 5px 8px;
+    border-radius: 5px;
+    box-shadow: 0 10px 10px rgba(0, 0, 0, 0.1);
+    opacity: 0;
+    pointer-events: none;
+    transition: all 0.3s cubic-bezier(0.68, -0.55, 0.265, 1.55);
+}
+
+.wrapper .tooltip::before {
+    position: absolute;
+    content: "";
+    height: 8px;
+    width: 8px;
+    background: #fff;
+    bottom: -3px;
+    left: 50%;
+    transform: translate(-50%) rotate(45deg);
+    transition: all 0.3s cubic-bezier(0.68, -0.55, 0.265, 1.55);
+}
+
+.wrapper .icon:hover .tooltip {
+    top: -45px;
+    opacity: 1;
+    visibility: visible;
+    pointer-events: auto;
+}
+
+.wrapper .icon:hover span,
+.wrapper .icon:hover .tooltip {
+    text-shadow: 0px -1px 0px rgba(0, 0, 0, 0.1);
+}
+
+.wrapper .facebook:hover,
+.wrapper .facebook:hover .tooltip,
+.wrapper .facebook:hover .tooltip::before {
+    background: #3b5998;
+    color: #fff;
+}
+
+.wrapper .twitter:hover,
+.wrapper .twitter:hover .tooltip,
+.wrapper .twitter:hover .tooltip::before {
+    background: #1da1f2;
+    color: #fff;
+}
+
+.wrapper .instagram:hover,
+.wrapper .instagram:hover .tooltip,
+.wrapper .instagram:hover .tooltip::before {
+    background: #c32aa3;
+    color: #fff;
+}
+
+.wrapper .youtube:hover,
+.wrapper .youtube:hover .tooltip,
+.wrapper .youtube:hover .tooltip::before {
+    background: #ff0000;
+    color: #fff;
+}
+
+.social-text p, .contact-text p {
+    color: #fff;
+    margin: 0;
+}
+
+.copyright-container {
+    flex: 1 1 100%;
+    background-color: #2c3e50; /* Cambia el color a tu preferencia */
+    padding: 15px 10px;
+    text-align: center;
+    color: #fff;
+}
+
+.copyright-container small {
+    font-size: 15px;
+}
+/*CODIGO DEL PIE DE PAGINA*/

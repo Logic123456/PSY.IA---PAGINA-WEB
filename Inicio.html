@@ -1,0 +1,73 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv='X-UA-Compatible' content='IE=edge'>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Inicio</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.1.1/css/all.min.css">
+    <link rel="stylesheet" href="../CSS/Inicio.css">
+</head>
+<body>
+
+    <!-- CODIGO DEL INICIO -->
+    <section class="home">
+      <div class="container">
+         <div class="row">
+             <div class="home-text">
+               <img src="../IMG/PSY.png" style="width: 70px; height: 70px; margin-bottom: 20px; border-radius: 50%;">
+                  <h1>VIBE RISE</h1>
+                  <p class="animate-text">
+                     <span data-text="¿Necesitas alguien que te entienda?">¿Necesitas alguien que te entienda?</span>
+                     <span data-text="¿Pero tienes miedo de ir con Psicologo?">¿Pero tienes miedo de ir con Psicologo?</span>
+                     <span data-text="Pues estas en el lugar indicado">Pues estas en el lugar indicado</span>
+                     <span data-text="Conoce a Vibe Rise">Conoce a Vibe Rise</span>
+                     <span data-text="Tu compañero emocional">Tu compañero emocional</span>
+                     <span data-text="Que te escuchara y te ayudara a buscar una solucion a tus problemas">Que te escuchara y te ayudara a buscar una solucion a tus problemas</span>
+                  </p>
+                  <a href="Conocenos.html">
+                    <span></span>
+                    <span></span>
+                    <span></span>
+                    <span></span>
+                    Saber Mas
+                  </a>
+             </div>
+         </div>
+      </div>
+  </section>
+ 
+ <script>
+   const txts=document.querySelector(".animate-text").children,
+   txtsLen=txts.length;
+   let index=0;
+   const textInTimer=3000,
+    textOutTimer=2800;
+ 
+    function animateText() {
+      for(let i=0; i<txtsLen; i++){
+          txts[i].classList.remove("text-in","text-out");  
+      }
+          txts[index].classList.add("text-in");
+ 
+      setTimeout(function(){
+      txts[index].classList.add("text-out");              
+      },textOutTimer)
+ 
+      setTimeout(function(){
+ 
+      if(index == txtsLen-1){
+          index=0;
+      }
+      else{
+          index++;
+      }
+        animateText();
+      },textInTimer); 
+    }   
+   window.onload=animateText;
+ </script>
+    <!-- CODIGO DEL INICIO -->
+
+</body>
+</html>
